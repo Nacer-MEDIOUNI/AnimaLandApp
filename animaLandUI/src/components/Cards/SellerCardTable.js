@@ -35,22 +35,16 @@ export default function SellerCardTable() {
   return (
     <TableContainer component={Paper}>
       {loading ? (
-        <img
-          src={spinner}
-          className="flex flex-col lg:flex-row list-none lg:ml-auto"
-          style={{ width: "50%", height: "50%" }}
-          alt={{}}
-        />
+        <img src={spinner} style={{}} alt={{ spinner }} />
       ) : (
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="center"></TableCell>
-              <TableCell align="center">
+              <TableCell align="inherit">
                 <AddProduct />
               </TableCell>
-              <TableCell align="center">Product Image</TableCell>
-              <TableCell align="center">Product name</TableCell>
+              <TableCell align="center">Image</TableCell>
+              <TableCell align="center">Name</TableCell>
               <TableCell align="center">Price</TableCell>
               <TableCell align="center">Update</TableCell>
               <TableCell align="center">Delete</TableCell>
@@ -67,16 +61,15 @@ export default function SellerCardTable() {
                   key={product._id}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
+                  <TableCell align="center"></TableCell>
                   <TableCell align="center" component="th" scope="row">
                     <CardMedia
                       component="img"
-                      sx={{ width: "50%" }}
+                      sx={{ width: "auto" }}
                       image={product.image}
                       alt={product.name}
                     />
                   </TableCell>
-                  <TableCell align="center"></TableCell>
-
                   <TableCell align="center">{product.name}</TableCell>
                   <TableCell align="center">{product.price}</TableCell>
                   <TableCell align="center">

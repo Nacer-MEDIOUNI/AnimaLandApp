@@ -17,6 +17,7 @@ import PrivateRoute from "./PrivateRouter/PrivateRoute";
 import PrivateAuth from "./PrivateRouter/PrivateAuth";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PrivateSeller from "./PrivateRouter/PrivateSeller";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -55,9 +56,9 @@ const App = () => {
           <Route
             path="/seller_store"
             element={
-              <PrivateRoute>
+              <PrivateSeller>
                 <SellerStore />
-              </PrivateRoute>
+              </PrivateSeller>
             }
           />{" "}
           <Route path="/store" element={<Store />} />

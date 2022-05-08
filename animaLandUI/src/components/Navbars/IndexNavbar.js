@@ -14,16 +14,15 @@ import SellerDropdown from "../Dropdowns/SellerDropdown.js";
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  const { isLoad, isSeller } = useSelector((state) => state.userReducer);
+  const { isLoad, user } = useSelector((state) => state.userReducer);
   const { cartItems } = useSelector((state) => state.cartReducer);
   const token = localStorage.getItem("token");
-
   return (
     <>
       <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-          <div className="w-full relative flex  lg:w-auto lg:static lg:block lg:justify-start">
-            <div className="w-full relative flex  lg:w-auto lg:static lg:block lg:justify-start">
+          <div className="w-full relative flex   lg:w-auto lg:static lg:block lg:justify-start">
+            <div className="w-full relative flex  flex-wrap lg:w-auto lg:static lg:block lg:justify-start">
               <Link
                 to="/"
                 className="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
@@ -33,12 +32,12 @@ export default function Navbar() {
               <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-1">
                 <i class="fa-solid fa-magnifying-glass-arrow-right fa-beat"></i>
               </span>
-              <input
+              {/* <input
                 type="text"
                 placeholder="Search ..."
-                style={{ width: 300 }}
+                style={{ width: "auto" }}
                 class="px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full pl-10"
-              />
+              /> */}
               <Link to="/store">
                 <IconButton
                   sx={{
@@ -71,7 +70,7 @@ export default function Navbar() {
                 <img
                   src={spinner}
                   className="flex flex-col lg:flex-row list-none lg:ml-auto"
-                  style={{ width: "20%", height: "20%" }}
+                  style={{ width: "auto", height: "auto" }}
                 />
               ) : token ? (
                 <>
@@ -97,7 +96,7 @@ export default function Navbar() {
                     </li>
 
                     <li className="flex items-center">
-                      {!isSeller ? <UserDropdown /> : <SellerDropdown />}
+                      {user.isSeller ? <SellerDropdown /> : <UserDropdown />}
                     </li>
                   </ul>
                 </>

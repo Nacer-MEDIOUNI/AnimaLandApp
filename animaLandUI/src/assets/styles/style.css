@@ -39,6 +39,13 @@ html {
   height: 100vh;
 }
 
+.backgroundImg{
+
+background: "right";                
+background-size: "inherit";
+background-repeat: "no-repeat"
+}
+
 @media (max-width: 1300px) {
   .products-list {
     height: auto;
@@ -579,7 +586,7 @@ select {
 
 @media (min-width: 1536px) {
   .container {
-    max-width: 1536px;
+    max-width: 1050px;
   }
 }
 
@@ -1897,7 +1904,8 @@ select {
 }
 
 .pl-10 {
-  padding-left: 2.5rem;
+  padding-left: 
+  10%;
 }
 
 .pt-12 {
@@ -2480,7 +2488,7 @@ select {
   }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 200px) {
   .sm\:block {
     display: block;
   }
@@ -2862,7 +2870,7 @@ select {
   }
 
   .xl\:w-6\/12 {
-    width: 50%;
+    width: 100%;
   }
 
   .xl\:w-8\/12 {

@@ -14,9 +14,9 @@ const UserDropdown = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.userReducer);
+  const { user, isSeller } = useSelector((state) => state.userReducer);
   // const { cartItems } = useSelector((state) => state.cartReducer);
-
+console.log(user.isSeller);
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -34,7 +34,8 @@ const UserDropdown = () => {
     navigate("/seller_store");
   };
 
-  return (
+  return ( 
+    
     <Box sx={{ flexGrow: 0 }}>
       <Tooltip title="Open settings">
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
