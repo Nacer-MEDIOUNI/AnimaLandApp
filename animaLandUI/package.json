@@ -1,5 +1,5 @@
 {
-  "name": "notus-react",
+  "name": "animaland",
   "version": "1.1.0",
   "description": "",
   "repository": "",
@@ -39,7 +39,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && gulp licenses",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
